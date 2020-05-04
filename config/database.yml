@@ -1,0 +1,5 @@
+
+# Allow to change the database by just restarting the app, no need to rebuild it
+
+DatabaseURI: mongodb://localhost:27017
+DatabaseName: houses

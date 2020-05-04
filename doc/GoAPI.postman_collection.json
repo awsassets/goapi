@@ -1,0 +1,471 @@
+{
+	"info": {
+		"_postman_id": "c8579d0e-d09d-4b81-8d25-76907bd3213a",
+		"name": "GoAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "LOGIN",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"test@gmail.com\",\n\t\"password\": \"hashedPass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/{{apiVersion}}/auth/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REFRESH JWT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/{{apiVersion}}/auth/refreshjwt",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"auth",
+								"refreshjwt"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "USER By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/{{apiVersion}}/users/replaceWithID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"users",
+								"replaceWithID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "USER",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "firstName",
+									"value": "Jeremy",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Clarkson",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "hashedPass",
+									"type": "text"
+								},
+								{
+									"key": "language",
+									"value": "fr",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/{{apiVersion}}/users",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "USER By ID",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Tim\",\n    \"lastName\": \"Bergling\",\n    \"password\": \"newPass\",\n    \"email\": \"doesItExist@gmail.com\",\n    \"zfzef\": \"willBeIgnored\",\n    \"id\": \"willBeIgnored\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/{{apiVersion}}/users/replaceWithID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"users",
+								"replaceWithID"
+							]
+						},
+						"description": "Updates methods allow you to update any field of a document.\nNon existing fields will automatically be ignored, and not mentionned or empty fields will not be updated"
+					},
+					"response": []
+				},
+				{
+					"name": "USER By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/{{apiVersion}}/users/replaceWithID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"users",
+								"replaceWithID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "USER ALL",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/{{apiVersion}}/users",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Houses",
+			"item": [
+				{
+					"name": "HOUSE By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/{{apiVersion}}/houses/replaceWithID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"houses",
+								"replaceWithID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HOUSE By User ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/{{apiVersion}}/houses/ofUser/replaceWithID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"houses",
+								"ofUser",
+								"replaceWithID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HOUSE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Beach House\",\n\t\"city\": \"Papeete\",\n\t\"userID\": \"5eb053c6573b029027b58db9\",\n\t\"rooms\":[\n\t\t{\n\t\t\t\"name\": \"Living room\",\n\t\t\t\"description\": \"With a huge couch\",\n\t\t\t\"surface\": 30\n\t\t},\n\t\t{\n\t\t\t\"name\": \"Kitchen\",\n\t\t\t\"description\": \"Brussels sprouts forbidden\",\n\t\t\t\"surface\": 1\n\t\t},\n\t\t{\n\t\t\t\"name\": \"Garage\",\n\t\t\t\"description\": \"\",\n\t\t\t\"surface\": 22\n\t\t}]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/{{apiVersion}}/houses",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"houses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HOUSE By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "userID",
+								"type": "text",
+								"value": "toto",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Bel Air\",\n\t\"city\": \"Los Angeles\",\n\t\"whatEver\": \"willBeIgnored\",\n\t\"rooms\":[\n\t\t{\n\t\t\t\"name\": \"Living room\",\n\t\t\t\"description\": \"With a huge couch\",\n\t\t\t\"surface\": 30\n\t\t},\n\t\t{\n\t\t\t\"name\": \"Tennis court\",\n\t\t\t\"description\": \"Because in Bel Air a house is not a house without a tennis court\",\n\t\t\t\"surface\": 80\n\t\t},\n\t\t{\n\t\t\t\"name\": \"Invalid room\",\n\t\t\t\"descri\": \"description field is mistyped, so description will be empty in database\",\n\t\t\t\"surface\": 22\n\t\t}]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/{{apiVersion}}/houses/replaceWithID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"houses",
+								"replaceWithID"
+							]
+						},
+						"description": "Updates methods allow you to update any field of a document. Non existing fields will automatically be ignored, and not mentionned or empty fields will not be updated"
+					},
+					"response": []
+				},
+				{
+					"name": "HOUSE By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/{{apiVersion}}/houses/replaceWithID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"houses",
+								"replaceWithID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HOUSE ALL",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/{{apiVersion}}/houses",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{apiVersion}}",
+								"houses"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

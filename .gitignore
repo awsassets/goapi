@@ -1,0 +1,4 @@
+# macOS DS_STORE files
+*.DS_STORE
+# Goland config files
+.idea

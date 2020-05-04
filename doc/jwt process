@@ -1,0 +1,11 @@
+
+
+Each request of API is protected by JWT, meaning a valid token must be included in the headers.
+The only requests not protected are the login, register (POST /users) and reset password.
+
+After login a user gets an individual token which stays valid during 15 minutes (config file)
+After this period, the token becomes invalidated and eligible to refresh during 7 days
+Send this token to the refresh request to get a new valid one
+(this means that is a user doesn't connect to the app within 7 days he will need to authenticate again)
+
+When login out of app, send your token to an route that invalidates your previous token
