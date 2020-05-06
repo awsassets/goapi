@@ -2,7 +2,7 @@
 
 GoAPI is a simple, secure and fast API writen in Golang, user authentication ready.
 
-This template is forked from one of my personal projects, every feature is not implemented yet.
+This template is based on one of my personal projects, every feature is not implemented yet.
 
 ## 👨‍🍳 What is it made of
 
@@ -11,7 +11,7 @@ Useby is based on the [Fiber](https://github.com/gofiber/fiber) Go framework, wh
 [JWT](https://github.com/dgrijalva/jwt-go) handles the authentication.
 
 Useby is conceived to work with [MongoDB](https://github.com/mongodb/mongo-go-driver).
-It does not use any ODM, first to avoid having an  extra abstraction level, second because its useless with mongoDB thanks to the "omitempty" tag which validate data when mapping json to objects.
+It does not use any ODM, first to avoid having an extra abstraction level, second because its useless in Golang thanks to the "omitempty" tag which validate data when mapping json to objects.
 
 And it is built on an MVC + Service-Repository architecture for best flexibility.
 
@@ -24,7 +24,7 @@ go run main.go
 ```
 In [Postman](https://www.postman.com)
 import the requests collection and localhost environment
-[available here](../doc).
+[available here](doc/).
 
 First **Post** a user to get a **JWT**, and use it as bearer token for the other requests.
 
