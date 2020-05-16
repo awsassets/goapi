@@ -19,8 +19,8 @@ And it is built on an MVC + Service-Repository architecture for best flexibility
 
 ```
 go get -u github.com/natnatf/goapi
-go build main.go
-go run main.go
+go build github.com/natnatf/goapi/main.go
+go run github.com/natnatf/goapi/main.go
 ```
 In [Postman](https://www.postman.com)
 import the requests collection and localhost environment
